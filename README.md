@@ -1,68 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+API: 6f8d62adc168a5dd46943741c2af299c
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+Welcome to the interview task :)
+===============================
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+If something is not clear or you need help - just ask :smile:. Nobody knows everything!
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+1. Read the task
+2. Create a project
+3. Please implement the project according to your own best standards, possibly
+   - Tests, tdd
+   - Code guidelines
+   - Structure / architecture
+   - Refactoring
+   - Conventions
+4. For the layout bootstrap or plain design is enough.
+5. Make sure to commit frequently and feel free to stop working on it after 1-2 hours
+6. Provide an overview which points you would improve if you had more time to work on the project
 
-### `npm test`
+Scenario - Weathermap api client
+---------------------------
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Your app should be a client for the [Open Weather Map API](http://openweathermap.org/API#weather) JSON api
 
-### `npm run build`
+Features that should work:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Display the weather at random geographic coordinates
+* A form with city and country that fetches and displays the weather in this city
+  - optional: cache the fetched weather data
+* Gracefully handle the case where the city could not be found (display the information to the user)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Have fun!
