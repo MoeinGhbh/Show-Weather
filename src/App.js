@@ -15,32 +15,60 @@ class App extends React.Component {
     error: undefined
   }
 
-  handlenum1Change (evt) {
-      let temp = (evt.target.value);
-        }
+  
+
+  handlenum1ChangeLat(e2){
+    let lat = (e2.target.value)
+  }
+
+  handlenum1ChangeLon(e1){
+    let lon = (e1.target.value)
+  }
 
 
  getWeather = async (e) => {
     e.preventDefault();
-    const city = e.target.city.value;
+    console.log(e.target.lat.value)
+    console.log(e.target.lon.value)
 
-    const API_KEY='6f8d62adc168a5dd46943741c2af299c'
 
-    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
+    const lat = e.target.lat.value
+    const lon = e.target.lon.value
+
+    const appid='6f8d62adc168a5dd46943741c2af299c'
+
+    //     Parameters:
+    // appid - personal API key
+    // lat, lon - coordinates of the location of your interest (latitude/longitude)
+    
+
+  
+
+   
+    
+
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?appid=${appid}&lat=${lat}&lon=${lon}`);
     const data = await api_call.json();
-    console.log(data)
-    if (city) {
+    console.log(data.cod,'status of rersult call API')
+    console.log(data,'status of rersult call API')
+   
+
+    if (data.cod==200) {
       this.setState({
-        temperature: data.main.temp,
-        city: data.name,
-        icon: data.weather.icon,
-        rain: data.rain,
-        pressure: data.main.pressure,
-        humidity: data.main.humidity,
-        description: data.weather[0].description,
+        // temperature: data.main.temp,
+        city: data.city.name,
+        country:data.city.country,
+        rain: data.list[0].main.rain,
+        pressure:  data.list[0].main.pressure,
+        humidity:  data.list[0].main.humidity,
+        // description: data.weather[0].description,
+        // description: data.list[0].clouds,
+        temperature: data.list[0].main.temp,
         error: ""
       });
-    } else {
+    } else
+    
+    {
       this.setState({
         temperature: undefined,
         city: undefined,
@@ -51,6 +79,7 @@ class App extends React.Component {
         rain : undefined,
         error: "Please enter the values."
       });
+      alert('City is not vali')
     }
   }
   render() {
@@ -66,7 +95,17 @@ class App extends React.Component {
                 <div className="col-xs-7 form-container">
                   <form onSubmit={this.getWeather} >
 
-                  <input type="text" name="city" onChange={this.handlenum1Change} placeholder="City..."/>
+                  {/* <input type="text" name="city" onChange={this.handlenum1Change} placeholder="City..."/> */}
+
+
+                  <p>Get the weather By geographic coordinates</p>
+                  <label>Lat</label>
+                  <input type="text" name='lat' onChange={this.handlenum1ChangeLat} />
+                  <label>Lon</label>
+                  <input type="text" name='lon' onChange={this.handlenum1ChangeLon} />
+
+                  
+
 
     <button>Get Weather</button>
     </form>
@@ -81,6 +120,7 @@ class App extends React.Component {
                     rain={this.state.rain}
                     icon={this.state.icon}
                     error={this.state.error}
+                    country={this.state.country}
                   />
                 </div>
               </div>
