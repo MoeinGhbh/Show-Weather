@@ -1,8 +1,6 @@
 API: 6f8d62adc168a5dd46943741c2af299c
 
-
-
-Welcome to the interview task :)
+    show weather
 ===============================
 
 1. Read the task
