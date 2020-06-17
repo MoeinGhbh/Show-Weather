@@ -1,5 +1,5 @@
 # show weather
-===============================
+
 Scenario - Weathermap api client
 ---------------------------
 
